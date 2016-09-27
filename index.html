@@ -10,6 +10,7 @@
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
         body {
             font: 400 15px Lato, sans-serif;
@@ -286,25 +287,25 @@
     <h4>Annotation</h4><br>
     <div class="row">
         <div class="col-sm-9">
-            <p class="text-justify">Procedure 1 defines our manual type annotation procedure. Because we annotate each bug twice, once for
-                each type system, our experiment is a within-subject repeated measure experiment. As such, a phenomenon known as
-                learning effects may come into play, as knowledge gained from creating the annotations for one type checker may
-                aid in creating the annotation for the other. To mitigate the learning effects, for a bug b in B, we first pick a type
-                checker tc from TypeScript and Flow uniformly at random, so that, on average, we consider as many bugs
-                for the first time for each type system (line 3). If b is not type related “beyond a shadow of a doubt”, such as misunderstanding the
-                specification, we label it as undetectable under tc and categorise it, skipping the
-                annotation process. If not, we initialise the environment: for Flow, we add a header comment /* @flow */
-                to the file we want to annotate, whereas for TypeScript, we change the file extension from “.js" to
-                “.ts” (line 4). We read the bug report and the patch to identify the patched region, a set of scopes are
-                touched by the patch. Combining human program comprehension and JavaScript’s read–eval–print loop
-                (REPL), e.g. Node.js, as appropriate, we conjecture a type annotation that enables tc to detect b. Following a set of predefined annotation tactics, we add the hypothesised annotations with the aim of
-                 driving tc to type check the region under assessment. We ignore type errors that we consider unrelated
-                 to this goal. Note that we are neither familiar with any project in our corpus, nor experts in type
-                 systems. To combat this, we have striven to be conservative: we annotate variables whose types are
-                 difficult to infer with any. Then we type check the resulting program. This process continues until we
-                 confirm that b’s bug is tc-detectable because tc throws an error within the patched region and the
-                 added annotations are nontrivial and consistent, or we deem b is not tc-detectable, or we
-                 exceed the time budget M.</p>
+            <p class="text-justify">Procedure 1 defines our manual type annotation procedure. Because we annotate each bug twice, once 
+            for each type system, our experiment is a within-subject repeated measure experiment. As such, a phenomenon known as
+            learning effects may come into play, as knowledge gained from creating the annotations for one type checker may
+            aid in creating the annotation for the other. To mitigate the learning effects, for a bug \(b\) in \(B\), we first pick a 
+            type checker \(tc\) from TypeScript and Flow uniformly at random, so that, on average, we consider as many bugs
+            for the first time for each type system (line 3). If b is not type related “beyond a shadow of a doubt”, such as 
+            misunderstanding the specification, we label it as undetectable under \(tc\) and categorise it, skipping the
+            annotation process. If not, we initialise the environment: for Flow, we add a header comment <code>/* @flow */</code>
+            to the file we want to annotate, whereas for TypeScript, we change the file extension from “.js" to
+            “.ts” (line 4). We read the bug report and the patch to identify the patched region, a set of scopes are
+            touched by the patch. Combining human program comprehension and JavaScript’s read–eval–print loop
+            (REPL), e.g. Node.js, as appropriate, we conjecture a type annotation that enables \(tc\) to detect \(b\). Following a set 
+            of predefined annotation tactics, we add the hypothesised annotations with the aim of driving \(tc\) to type check the 
+            region under assessment. We ignore type errors that we consider unrelated to this goal. Note that we are neither familiar 
+            with any project in our corpus, nor experts in type systems. To combat this, we have striven to be conservative: we annotate 
+            variables whose types are difficult to infer with <code>any</code>. Then we type check the resulting program. This process 
+            continues until we confirm that \(b\) is tc-detectable because \(tc\) throws an error within the patched region and the
+            added annotations are nontrivial and consistent, or we deem \(b\) is not tc-detectable, or we exceed the time budget \(M\).
+            </p>
         </div>
         <div class="col-sm-3">
             <img class="img-responsive center-block" src="images/annotation.png">
@@ -315,7 +316,7 @@
 <!-- Container (Results Section) -->
 <div id="results" class="container-fluid text-center">
     <h2>Results</h2>
-    <h4>What we have discovered</h4>
+    <h3>What we have discovered</h3><br><br>
     <div class="row text-center slideanim">
         <div class="col-sm-4">
             <div class="thumbnail">
@@ -350,16 +351,16 @@
             </div>
         </div>
     </div>
-
     <br>
-
-    <h4>What developers say</h4>
+    <h3>What developers say</h3>
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <!--
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            -->
         </ol>
 
         <!-- Wrapper for slides -->
@@ -367,16 +368,18 @@
             <div class="item active">
                 <h4>“That’s shocking. If you could make a change to the way we do development that would reduce the
                     number of bugs being checked in by 10% or more overnight, that’s a no-brainer. Unless it doubles
-                    development time or something, we’d do it.”<br>
+                    development time or something, we’d do it.”<br><br>
                     <span style="font-style:normal;">An Engineering Manager, Microsoft</span>
                 </h4>
             </div>
+            <!--
             <div class="item">
                 <h4>"Bla bla bla"<br><span style="font-style:normal;">John Doe</span></h4>
             </div>
             <div class="item">
                 <h4>"Bla bla bla"<br><span style="font-style:normal;">John Doe Jr.</span></h4>
             </div>
+            -->
         </div>
 
         <!-- Left and right controls -->
@@ -392,9 +395,10 @@
 </div>
 
 <!-- Container (Case Study Section) -->
-<div id="data" class="container-fluid text-center bg-grey">
-       <h2>Case Study</h2>
-    <h4>Mini intro</h4><br>
+<div id="casestudy" class="container-fluid text-center bg-grey">
+    <h2>Case Study</h2>
+    <h4>Some bugs are worth closer inspection. Based on four criteria we select bugs for further manual assessment: ones whose TypeScript- or Flow-detectability remains unknown in the assessment stage, ones whose TypeScript- or Flow-detectability differs among the three "raters", ones whose TypeScript- and Flow-detectability differ, and ones that are TypeScript-detectable under version 2.0 but not under 1.9.</h4>
+    <br>
     <div class="row slideanim">
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-off logo-small"></span>
@@ -433,68 +437,77 @@
 </div>
 
 <!-- Container (Data Section) -->
-<div id="casestudy" class="container-fluid">
+<div id="data" class="container-fluid">
        <div class="text-center">
-        <h2>Data</h2>
-        <h4>Download the data you are interested</h4>
+        <h2>Experiment Artifacts</h2>
+        <h4><em>"A scientifically true effect can be regularly reproduced by anyone who carries out the appropriate experiment in the way prescribed."</em></h4>
     </div>
     <div class="row slideanim">
+        <div class ="col-sm-2">
+        </div>
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Basic</h1>
+                    <h1>Corpus</h1>
                 </div>
                 <div class="panel-body">
-                    <p><strong>20</strong> Lorem</p>
-                    <p><strong>15</strong> Ipsum</p>
-                    <p><strong>5</strong> Dolor</p>
-                    <p><strong>2</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
+                    <p><strong>400</strong> uniformly sampled JavaScript bugs on GitHub</p>
+                    <p>The tc-detectability of <strong>382</strong> bugs determined in <strong>10</strong> minutes</p>                
                 </div>
                 <div class="panel-footer">
-                    <h3>$19</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
+                    <button class="btn btn-lg">Download</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Pro</h1>
+                    <h1>Inter-Rater Agreement</h1>
                 </div>
                 <div class="panel-body">
-                    <p><strong>50</strong> Lorem</p>
-                    <p><strong>25</strong> Ipsum</p>
-                    <p><strong>10</strong> Dolor</p>
-                    <p><strong>5</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
+                    <p><strong>80</strong> bugs uniformly sampled from the corpus</p>
+                    <p>Annotated independently by <strong>3</strong> experimenters</p>
                 </div>
                 <div class="panel-footer">
-                    <h3>$29</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
+                    <button class="btn btn-lg">Download</button>
+                </div>
+            </div>
+        </div>
+        <div class ="col-sm-2">
+        </div>
+    </div>
+    <div class="row slideanim">
+        <div class ="col-sm-2">
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h1>Case Study</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>4</strong> cases: unknowns, disagreement, TypeScript 1.8 v.s. 2.0,</p>
+                    <p>Flow v.s. TypeScript.</p>
+                </div>
+                <div class="panel-footer">                
+                    <button class="btn btn-lg">Download</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Premium</h1>
+                    <h1>Annotation Facilitator</h1>
                 </div>
                 <div class="panel-body">
-                    <p><strong>100</strong> Lorem</p>
-                    <p><strong>50</strong> Ipsum</p>
-                    <p><strong>25</strong> Dolor</p>
-                    <p><strong>10</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
+                    <p>The GUI used to facilitate conducting the experiment</p>
+                    <p>JRE 8 required</p>
                 </div>
-                <div class="panel-footer">
-                    <h3>$49</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
+                <div class="panel-footer">                
+                    <button class="btn btn-lg">Download</button>
                 </div>
             </div>
+        </div>
+        <div class ="col-sm-2">
         </div>
     </div>
 </div>
@@ -509,7 +522,7 @@
             <!-- <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p> -->
             <p><span class="glyphicon glyphicon-envelope"></span>z.gao.12 (at) ucl.ac.uk </p>
         </div>
-        <div class="col-sm-7 slideanim">
+        <div class="col-sm-7">
             <div class="row">
                 <div class="col-sm-6 form-group">
                     <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
