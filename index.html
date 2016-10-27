@@ -214,7 +214,7 @@
 
 <div class="jumbotron text-center">
     <h1>Time-Travel Experimentation on Static Type Systems for JavaScript</h1><br>
-    <p>One smart sentence</p>
+    <!-- <p>One smart sentence</p> -->
 </div>
 
 <!-- Container (About Section) -->
@@ -282,6 +282,7 @@
                 on GitHub. We use this number to approximate the population. We set the confidence level and confidence
                 interval to be 95% and 5%, respectively. The result shows that a sample of 384 bugs is sufficient for
                 the experiment, which we rounded to 400 for convenience.</p>
+            <p class="text-justify">Please click <a href='data/bugs.json'><strong>here</strong></a> for the list of the 400 studied bugs.</p> 
         </div>
     </div>
     <br><br>
@@ -393,128 +394,76 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    
+    <br>
+    <h4><em>"A scientifically true effect can be regularly reproduced by anyone who carries out the appropriate experiment in the way prescribed."</em></h4>
+    <br>
+
+    <div class="row slideanim">
+        <div class="col-sm-6">
+            <span class="glyphicon glyphicon-lock logo-small"></span>
+            <h4><a href='https://bitbucket.org/ucabgao/time-travel_experiment_on_types'>Assessment</a></h4>
+            <p>The complete assessment on the 400 bugs.</p>
+        </div>
+        <div class="col-sm-6">
+            <span class="glyphicon glyphicon-wrench logo-small"></span>
+            <h4><a href='data/AnnotationFacilitator.7z'>Annotation Facilitator</a></h4>
+            <p>The tool used to facilitate the annotation procedure.</p>
+        </div>
+    </div>
 </div>
 
 <!-- Container (Case Study Section) -->
 <div id="casestudy" class="container-fluid text-center bg-grey">
     <h2>Case Study</h2>
-    <h4>Some bugs are worth closer inspection. Based on four criteria we select bugs for further manual assessment: ones whose TypeScript- or Flow-detectability remains unknown in the assessment stage, ones whose TypeScript- or Flow-detectability differs among the three "raters", ones whose TypeScript- and Flow-detectability differ, and ones that are TypeScript-detectable under version 2.0 but not under 1.9.</h4>
+    <h4>Some bugs are worth closer inspection. Based on three criteria we select bugs for further manual assessment: ones whose TypeScript- or Flow-detectability differs among the three "raters", ones whose TypeScript- and Flow-detectability differ, and ones that are TypeScript-detectable under version 2.0 but not under 1.8.</h4>
     <br>
-    <div class="row slideanim">
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-off logo-small"></span>
-            <h4>POWER</h4>
-            <p>Lorem ipsum dolor sit amet..</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-heart logo-small"></span>
-            <h4>LOVE</h4>
-            <p>Lorem ipsum dolor sit amet..</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-lock logo-small"></span>
-            <h4>JOB DONE</h4>
-            <p>Lorem ipsum dolor sit amet..</p>
-        </div>
-    </div>
-    <br><br>
-    <div class="row slideanim">
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-leaf logo-small"></span>
-            <h4>GREEN</h4>
-            <p>Lorem ipsum dolor sit amet..</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-certificate logo-small"></span>
-            <h4>CERTIFIED</h4>
-            <p>Lorem ipsum dolor sit amet..</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-wrench logo-small"></span>
-            <h4 style="color:#303030;">HARD WORK</h4>
-            <p>Lorem ipsum dolor sit amet..</p>
-        </div>
-    </div>
-</div>
 
-<!-- Container (Data Section) -->
-<div id="data" class="container-fluid">
-       <div class="text-center">
-        <h2>Experiment Artifacts</h2>
-        <h4><em>"A scientifically true effect can be regularly reproduced by anyone who carries out the appropriate experiment in the way prescribed."</em></h4>
-    </div>
     <div class="row slideanim">
-        <div class ="col-sm-2">
-        </div>
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Corpus</h1>
+                    <h1>Disagreement</h1>
                 </div>
                 <div class="panel-body">
-                    <p><strong>400</strong> uniformly sampled JavaScript bugs on GitHub</p>
-                    <p>The tc-detectability of <strong>382</strong> bugs determined in <strong>10</strong> minutes</p>                
+                    <p>Of the 80 uniformly-sampled bugs that we used to calculate inter-rater agreement, each rater needed to make 160 decisions in total, 80 for TypeScript-preventability and 80 for Flow-preventability. 138 of these 160 decisions were unanimously labelled. We define a strong disagreement as a disagreement in which one rater deems the bug preventable while another deems it unpreventable. Of the 22 disagreements, 12 are strong.</p>                
                 </div>
                 <div class="panel-footer">
-                    <button class="btn btn-lg">Download</button>
+                    <button class="btn btn-lg"><a href='data/disagreement.json'>Studied bugs</a></button>
                 </div>
             </div>
         </div>
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Inter-Rater Agreement</h1>
+                    <h1>Flow vs. TypeScript</h1>
                 </div>
                 <div class="panel-body">
-                    <p><strong>80</strong> bugs uniformly sampled from the corpus</p>
-                    <p>Annotated independently by <strong>3</strong> experimenters</p>
+                    <p>Though sharing a similar annotation syntax, Flow and TypeScript differ in some dimensions. We compared Flow and TypeScript in terms of their ability to potentially prevent public bugs had they been used when those bugs were introduced. Flow and TypeScript both catch a nontrivial portion of public bugs. In our dataset, the bugs they can prevent largely overlap, with 8 exceptions: 5 bugs are only Flow-preventable and 3 only TypeScript-preventable.</p>
                 </div>
                 <div class="panel-footer">
-                    <button class="btn btn-lg">Download</button>
-                </div>
-            </div>
-        </div>
-        <div class ="col-sm-2">
-        </div>
-    </div>
-    <div class="row slideanim">
-        <div class ="col-sm-2">
-        </div>
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <h1>Case Study</h1>
-                </div>
-                <div class="panel-body">
-                    <p><strong>4</strong> cases: unknowns, disagreement, TypeScript 1.8 v.s. 2.0,</p>
-                    <p>Flow v.s. TypeScript.</p>
-                </div>
-                <div class="panel-footer">                
-                    <button class="btn btn-lg">Download</button>
+                    <button class="btn btn-lg"><a href='data/flow_vs_tsc.json'>Studied bugs</a></button>
                 </div>
             </div>
         </div>
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Annotation Facilitator</h1>
+                    <h1>TypeScript 1.9 vs. 2.0</h1>
                 </div>
                 <div class="panel-body">
-                    <p>The GUI used to facilitate conducting the experiment</p>
-                    <p>JRE 8 required</p>
+                    <p>TypeScript 2.0 was released during this study, giving us the opportunity to measure the effectiveness of its handling of <code>null</code> and <code>undefined</code>. Prior to 2.0, all types were nullable in TypeScript. TypeScript 2.0 added the compiler option <code>--strictNullChecks</code>, which makes most types nonnullable. We reviewed our corpus and found that 22 bugs, an increase of 38%, are preventable under TypeScript 2.0 but not under TypeScript 1.9.</p>
                 </div>
-                <div class="panel-footer">                
-                    <button class="btn btn-lg">Download</button>
+                <div class="panel-footer">
+                    <button class="btn btn-lg"><a href='data/tsc_vs_tsc.json'>Studied bugs</a></button>
                 </div>
             </div>
-        </div>
-        <div class ="col-sm-2">
         </div>
     </div>
 </div>
 
 <!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
+<div id="contact" class="container-fluid">
     <h2 class="text-center">CONTACT</h2><br>
     <div class="row">
         <div class="col-sm-5">
