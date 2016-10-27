@@ -429,7 +429,8 @@
                     <p>Of the 80 uniformly-sampled bugs that we used to calculate inter-rater agreement, each rater needed to make 160 decisions in total, 80 for TypeScript-preventability and 80 for Flow-preventability. 138 of these 160 decisions were unanimously labelled. We define a strong disagreement as a disagreement in which one rater deems the bug preventable while another deems it unpreventable. Of the 22 disagreements, 12 are strong.</p>                
                 </div>
                 <div class="panel-footer">
-                    <button class="btn btn-lg"><a href='data/disagreement.json'>Studied bugs</a></button>
+                    <!-- <button class="btn btn-lg"><a href='data/disagreement.json'>Studied bugs</a></button> -->
+                    <a href='data/disagreement.json'>Studied bugs</a>
                 </div>
             </div>
         </div>
@@ -442,7 +443,8 @@
                     <p>Though sharing a similar annotation syntax, Flow and TypeScript differ in some dimensions. We compared Flow and TypeScript in terms of their ability to potentially prevent public bugs had they been used when those bugs were introduced. Flow and TypeScript both catch a nontrivial portion of public bugs. In our dataset, the bugs they can prevent largely overlap, with 8 exceptions: 5 bugs are only Flow-preventable and 3 only TypeScript-preventable.</p>
                 </div>
                 <div class="panel-footer">
-                    <button class="btn btn-lg"><a href='data/flow_vs_tsc.json'>Studied bugs</a></button>
+                    <!-- <button class="btn btn-lg"><a href='data/flow_vs_tsc.json'>Studied bugs</a></button> -->
+                    <a href='data/flow_vs_tsc.json'>Studied bugs</a>
                 </div>
             </div>
         </div>
@@ -455,7 +457,8 @@
                     <p>TypeScript 2.0 was released during this study, giving us the opportunity to measure the effectiveness of its handling of <code>null</code> and <code>undefined</code>. Prior to 2.0, all types were nullable in TypeScript. TypeScript 2.0 added the compiler option <code>--strictNullChecks</code>, which makes most types nonnullable. We reviewed our corpus and found that 22 bugs, an increase of 38%, are preventable under TypeScript 2.0 but not under TypeScript 1.9.</p>
                 </div>
                 <div class="panel-footer">
-                    <button class="btn btn-lg"><a href='data/tsc_vs_tsc.json'>Studied bugs</a></button>
+                    <!-- <button class="btn btn-lg"><a href='data/tsc_vs_tsc.json'>Studied bugs</a></button> -->
+                    <a href='data/tsc_vs_tsc.json'>Studied bugs</a>
                 </div>
             </div>
         </div>
