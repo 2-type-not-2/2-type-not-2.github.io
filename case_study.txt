@@ -1,3 +1,5 @@
+\todo{augment the discussion with how many disagreements by type system and by issue?}
+
 Disagreement:
 
 For \lstinline[style=custominlinejs]|babel/babel-loader:82|, two strong 
