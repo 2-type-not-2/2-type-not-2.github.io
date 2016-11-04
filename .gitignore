@@ -1,3 +1,6 @@
 *.DS_Store
 *.idea
 *.m4v
+documents/*
+!documents/case_study.pdf
+

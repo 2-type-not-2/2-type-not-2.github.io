@@ -282,7 +282,7 @@
                 on GitHub. We use this number to approximate the population. We set the confidence level and confidence
                 interval to be 95% and 5%, respectively. The result shows that a sample of 384 bugs is sufficient for
                 the experiment, which we rounded to 400 for convenience.</p>
-            <p class="text-justify">Please click <a href='data/bugs.json'><strong>here</strong></a> for the list of the 400 studied bugs.</p> 
+            <p class="text-justify">Please click <a href="data/bugs.json"><strong>here</strong></a> for the list of the 400 studied bugs.</p> 
         </div>
     </div>
     <br><br>
@@ -416,7 +416,7 @@
 <!-- Container (Case Study Section) -->
 <div id="casestudy" class="container-fluid text-center bg-grey">
     <h2>Case Study</h2>
-    <h4>Some bugs are worth closer inspection. Based on three criteria we select bugs for further manual assessment: ones whose TypeScript- or Flow-detectability differs among the three "raters", ones whose TypeScript- and Flow-detectability differ, and ones that are TypeScript-detectable under version 2.0 but not under 1.8.</h4>
+    <h4>Some bugs are worth closer inspection. Based on three criteria we select bugs for further manual assessment: ones whose TypeScript- or Flow-detectability differs among the three "raters", ones whose TypeScript- and Flow-detectability differ, and ones that are TypeScript-detectable under version 2.0 but not under 1.8. Please click <a href="documents/case_study.pdf">here</a> for a detailed discussion.</h4>
     <br>
 
     <div class="row slideanim">
@@ -451,10 +451,10 @@
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>TypeScript 1.9 vs. 2.0</h1>
+                    <h1>TypeScript 1.8 vs. 2.0</h1>
                 </div>
                 <div class="panel-body">
-                    <p>TypeScript 2.0 was released during this study, giving us the opportunity to measure the effectiveness of its handling of <code>null</code> and <code>undefined</code>. Prior to 2.0, all types were nullable in TypeScript. TypeScript 2.0 added the compiler option <code>--strictNullChecks</code>, which makes most types nonnullable. We reviewed our corpus and found that 22 bugs, an increase of 38%, are preventable under TypeScript 2.0 but not under TypeScript 1.9.</p>
+                    <p>TypeScript 2.0 was released during this study, giving us the opportunity to measure the effectiveness of its handling of <code>null</code> and <code>undefined</code>. Prior to 2.0, all types were nullable in TypeScript. TypeScript 2.0 added the compiler option <code>--strictNullChecks</code>, which makes most types nonnullable. We reviewed our corpus and found that 22 bugs, an increase of 38%, are preventable under TypeScript 2.0 but not under TypeScript 1.8.</p>
                 </div>
                 <div class="panel-footer">
                     <!-- <button class="btn btn-lg"><a href='data/tsc_vs_tsc.json'>Studied bugs</a></button> -->
