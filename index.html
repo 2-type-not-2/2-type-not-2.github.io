@@ -213,7 +213,7 @@
 </nav>
 
 <div class="jumbotron text-center">
-    <h1>Time-Travel Experimentation on Static Type Systems for JavaScript</h1><br>
+    <h1>To Type or Not to Type: Quantifying Detectable Bugs in JavaScript</h1><br>
     <!-- <p>One smart sentence</p> -->
 </div>
 
@@ -222,16 +222,27 @@
     <div class="row">
         <div class="col-sm-8">
             <h2>Overview</h2>
-            <p class="text-justify">Javascript has experienced explosive growth and is now used in large mature projects even outside the web
-                domain. JavaScript is also a dynamically typed language for which static type systems, notably
-                Microsoft’s TypeScript and FaceBook’s Flow, have been written. What benefits do these static type
-                systems provide?</p>
-            <p class="text-justify">To answer this question, we employ a novel experimental methodology that augments mining software
-                repositories with experimentation to quantify the proportion of bugs that these type systems
-                can help avoid. Leveraging Javascript project histories, we “travel back in time” by selecting a fixed
-                bug and checking out the code just prior to the fix. We then create an alternative history by adding
-                type annotations to the buggy code and testing whether TypeScript and Flow would have detected the bug,
-                presumably preventing its public release.</p>
+            <p class="text-justify">JavaScript is growing explosively and is 
+            now used in large mature projects even outside the web domain. 
+            JavaScript is also a dynamically typed language for which static 
+            type systems, notably Facebook’s Flow and Microsoft’s TypeScript, 
+            have been written. What benefits do these static type systems 
+            provide?</p>
+            <p class="text-justify">Leveraging JavaScript project histories, 
+            we select a fixed bug and check out the code just prior to the 
+            fix. We manually add type annotations to the buggy code and test 
+            whether Flow and TypeScript report an error on the buggy code, 
+            thereby possibly prompting a developer to fix the bug before its 
+            public release. We then report the proportion of bugs on which 
+            these type systems reported an error. Evaluating static type 
+            systems against public bugs, which have survived testing and 
+            review, is conservative: it understates their effectiveness at 
+            detecting bugs during private development, not to mention their 
+            other benefits such as facilitating code search/completion and 
+            serving as documentation. Despite this uneven playing field, our 
+            central finding is that both static type systems find an important 
+            percentage of public bugs: both Flow 0.30 and TypeScript 2.0 
+            successfully detect 15%!</p>
         </div>
         <div class="col-sm-4">
             <img class="img-responsive center-block" alt="Responsive image" src="images/time_travel.jpg">
