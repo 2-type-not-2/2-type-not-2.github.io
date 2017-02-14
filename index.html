@@ -208,10 +208,11 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#about">OVERVIEW</a></li>
+                <!-- <li><a href="#definition">DEFINITION</a></li> -->
                 <li><a href="#methodology">METHODOLOGY</a></li>
                 <li><a href="#results">RESULTS</a></li>
                 <li><a href="#casestudy">CASE STUDY</a></li>
-                <li><a href="#data">DATA</a></li>
+                <!-- <li><a href="#data">DATA</a></li> -->
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
@@ -255,6 +256,37 @@
     </div>
 </div>
 
+<!-- Container (Definition Section) -->
+<!--
+<div id="definition" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Overview</h2>
+            <p class="text-justify">JavaScript is growing explosively and is now
+            used in large mature projects even outside the web domain.
+            JavaScript is also a dynamically typed language for which static
+            type systems, notably Facebook’s Flow and Microsoft’s TypeScript,
+            have been written. What benefits do these static type systems
+            provide?</p>
+            <p class="text-justify">Leveraging JavaScript project histories, we
+            select a fixed bug and check out the code just prior to the fix. We
+            manually add type annotations to the buggy code and test whether
+            Flow and TypeScript report an error on the buggy code, thereby
+            possibly prompting a developer to fix the bug before its public
+            release. We then report the proportion of bugs on which these type
+            systems reported an error. Evaluating static type systems against
+            public bugs, which have survived testing and review, is
+            conservative: it understates their effectiveness at detecting bugs
+            during private development, not to mention their other benefits such
+            as facilitating code search/completion and serving as documentation.
+            Despite this uneven playing field, our central finding is that both
+            static type systems find an important percentage of public bugs:
+            both Flow 0.30 and TypeScript 2.0 successfully detect 15%!</p>
+        </div>
+    </div>
+</div>
+-->
+
 <!-- Container (Methodology Section) -->
 <div id="methodology" class="container-fluid text-center bg-grey">
     <h2>Methodology</h2>
@@ -286,28 +318,25 @@
         </div>
         <div class="col-sm-7">
             <p class="text-justify">We seek to construct a corpus of bugs that
-            is representative and sufficiently large to support
-                statistical inference. As always, achieving representativeness
-                is the main difficulty and uniform sampling our main tool. We
-                cannot sample bugs directly, but rather commits that we must
-                classify into fixes and nonfixes. Why fixes? Because a fix is
-                often labeled as such, its parent is almost certainly buggy and
-                it identifies the region in the parent that a developer deemed
-                relevant to the bug. To identify bug-fixing commits, we consider
-                only projects that use issue trackers, then, in parallel, we
-                look for bug report references in commit messages and commit ids
-                (SHAs) in bug reports. This heuristic is not only noisy; it must
-                also contend with bias in project selection and bias introduced
-                by missing links.</p>
-            <p class="text-justify">Striving for generality, we used the
-                standard sample size computation to determine the number of bugs
-                needed to achieve a specified confidence interval. On
-                19/08/2015, there were 3,910,969 closed bug reports in
-                JavaScript projects on GitHub. We use this number to approximate
-                the population. We set the confidence level and confidence
-                interval to be 95% and 5%, respectively. The result shows that a
-                sample of 384 bugs is sufficient for the experiment, which we
-                rounded to 400 for convenience.</p>
+            is representative and sufficiently large to support statistical
+            inference. As always, achieving representativeness is the main
+            difficulty, which we address by uniform sampling. We cannot sample
+            bugs directly, but rather commits that we must classify into fixes
+            and non-fixes. Why fixes? Because a fix is often labelled as such,
+            its parent is almost certainly buggy and it identifies the region in
+            the parent that a developer deemed relevant to the bug. To identify
+            bug-fixing commits, we consider only projects that use issue
+            trackers, then we look for bug report references in commit messages
+            and commit ids (SHAs) in bug reports. This heuristic is not only
+            noisy; it must also contend with bias in project selection and bias
+            introduced by missing links.</p>
+            <p class="text-justify">We used the standard sample size computation
+            to determine the sample size. On 19/08/2015, there were 3,910,969
+            closed issues for JavaScript projects on GitHub, which we used to
+            approximate the population. We set the confidence level and
+            confidence interval to 95% and 5%, respectively. The calculation
+            showed that a sample of 384 bugs was sufficient for the experiment,
+            which we rounded to 400.</p>
             <p class="text-justify">Please click <a
             href="data/bugs.json"><strong>here</strong></a> for the list of the
             400 studied bugs.</p>
@@ -316,43 +345,35 @@
     <br><br>
     <h4>Annotation</h4><br>
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-8">
             <p class="text-justify">Procedure 1 defines our manual type
             annotation procedure. Because we annotate each bug twice, once for
             each type system, our experiment is a within-subject repeated
             measure experiment. As such, a phenomenon known as learning effects
             may come into play, as knowledge gained from creating the
-            annotations for one type checker may aid in creating the annotation
-            for the other. To mitigate the learning effects, for a bug \(b\) in
-            \(B\), we first pick a type checker \(tc\) from TypeScript and Flow
-            uniformly at random, so that, on average, we consider as many bugs
-            for the first time for each type system (line 3). If b is not type
-            related “beyond a shadow of a doubt”, such as misunderstanding the
-            specification, we label it as undetectable under \(tc\) and
-            categorise it, skipping the annotation process. If not, we
-            initialise the environment: for Flow, we add a header comment
-            <code>/* @flow */</code> to the file we want to annotate, whereas
-            for TypeScript, we change the file extension from “.js" to “.ts”
-            (line 4). We read the bug report and the patch to identify the
-            patched region, a set of scopes are touched by the patch. Combining
-            human program comprehension and JavaScript’s read–eval–print loop
-            (REPL), e.g. Node.js, as appropriate, we conjecture a type
-            annotation that enables \(tc\) to detect \(b\). Following a set of
-            predefined annotation tactics, we add the hypothesised annotations
-            with the aim of driving \(tc\) to type check the region under
-            assessment. We ignore type errors that we consider unrelated to this
-            goal. Note that we are neither familiar with any project in our
-            corpus, nor experts in type systems. To combat this, we have striven
-            to be conservative: we annotate variables whose types are difficult
-            to infer with <code>any</code>. Then we type check the resulting
-            program. This process continues until we confirm that \(b\) is
-            tc-detectable because \(tc\) throws an error within the patched
-            region and the added annotations are nontrivial and consistent, or
-            we deem \(b\) is not tc-detectable, or we exceed the time budget
-            \(M\).
-            </p>
+            annotations for one type checker may speed annotating the other. To
+            mitigate learning effects, for a bug \(b\) in \(B\), we first pick a
+            type system \(ts\) from Flow and TypeScript uniformly at random, so
+            that, on average, we consider as many bugs for the first time for
+            each type system. If \(b\) is not type related “beyond a shadow of a
+            doubt”, such as misunderstanding the specification, we label it as
+            undetectable under \(ts\) and categorise it, skipping the annotation
+            process. If not, we read the bug report and the fix to identify the
+            patched region, the set of lexical scopes the fix changes. Combining
+            human comprehension and JavaScript’s read–eval–print loop (REPL),
+            e.g. Node.js, we attempt to understand the intended behavior of a
+            program and add consistent and minimal annotations that cause ts to
+            error on \(b\). We are not experts in type systems nor any project
+            in our corpus. To combat this, we have striven to be conservative:
+            we annotate variables whose types are difficult to infer with
+            <code>any</code>. Then we type check the resulting program. We
+            ignore type errors that we consider unrelated to this goal. We
+            repeat this process until we confirm that \(b\) is \(ts\)-detectable
+            because \(ts\) throws an error within the patched region and the
+            added annotations are consistent, or we deem \(b\) is not
+            \(ts\)-detectable, or we exceed the time budget \(M\).</p>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <img class="img-responsive center-block" src="images/annotation.png">
         </div>
     </div>
@@ -504,7 +525,7 @@
                     public bugs had they been used when those bugs were
                     introduced. Flow and TypeScript both catch a nontrivial
                     portion of public bugs. In our dataset, the bugs they can
-                    prevent largely overlap, with 8 exceptions: 5 bugs are only
+                    prevent largely overlap, with 6 exceptions: 3 bugs are only
                     Flow-preventable and 3 only TypeScript-preventable.</p>
                 </div>
                 <div class="panel-footer">
@@ -525,7 +546,7 @@
                     2.0, all types were nullable in TypeScript. TypeScript 2.0
                     added the compiler option <code>--strictNullChecks</code>,
                     which makes most types nonnullable. We reviewed our corpus
-                    and found that 22 bugs, an increase of 38%, are preventable
+                    and found that 22 bugs, an increase of 58%, are preventable
                     under TypeScript 2.0 but not under TypeScript 1.8.</p>
                 </div>
                 <div class="panel-footer">
