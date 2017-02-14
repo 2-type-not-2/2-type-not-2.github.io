@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Time-Travel Experimentation on Types</title>
+    <title>On the Effectiveness of Static Typing in Detecting Public
+    Bugs</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+    src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
         body {
@@ -193,6 +196,9 @@
                 font-size: 150px;
             }
         }
+        .row-sm-offset-h4{
+            margin-top: 80px;
+        }
     </style>
 </head>
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -217,35 +223,34 @@
     <!-- <p>One smart sentence</p> -->
 </div>
 
-<!-- Container (About Section) -->
+<!-- Container (Overview Section) -->
 <div id="about" class="container-fluid">
     <div class="row">
         <div class="col-sm-8">
             <h2>Overview</h2>
-            <p class="text-justify">JavaScript is growing explosively and is 
-            now used in large mature projects even outside the web domain. 
-            JavaScript is also a dynamically typed language for which static 
-            type systems, notably Facebook’s Flow and Microsoft’s TypeScript, 
-            have been written. What benefits do these static type systems 
+            <p class="text-justify">JavaScript is growing explosively and is now
+            used in large mature projects even outside the web domain.
+            JavaScript is also a dynamically typed language for which static
+            type systems, notably Facebook’s Flow and Microsoft’s TypeScript,
+            have been written. What benefits do these static type systems
             provide?</p>
-            <p class="text-justify">Leveraging JavaScript project histories, 
-            we select a fixed bug and check out the code just prior to the 
-            fix. We manually add type annotations to the buggy code and test 
-            whether Flow and TypeScript report an error on the buggy code, 
-            thereby possibly prompting a developer to fix the bug before its 
-            public release. We then report the proportion of bugs on which 
-            these type systems reported an error. Evaluating static type 
-            systems against public bugs, which have survived testing and 
-            review, is conservative: it understates their effectiveness at 
-            detecting bugs during private development, not to mention their 
-            other benefits such as facilitating code search/completion and 
-            serving as documentation. Despite this uneven playing field, our 
-            central finding is that both static type systems find an important 
-            percentage of public bugs: both Flow 0.30 and TypeScript 2.0 
-            successfully detect 15%!</p>
+            <p class="text-justify">Leveraging JavaScript project histories, we
+            select a fixed bug and check out the code just prior to the fix. We
+            manually add type annotations to the buggy code and test whether
+            Flow and TypeScript report an error on the buggy code, thereby
+            possibly prompting a developer to fix the bug before its public
+            release. We then report the proportion of bugs on which these type
+            systems reported an error. Evaluating static type systems against
+            public bugs, which have survived testing and review, is
+            conservative: it understates their effectiveness at detecting bugs
+            during private development, not to mention their other benefits such
+            as facilitating code search/completion and serving as documentation.
+            Despite this uneven playing field, our central finding is that both
+            static type systems find an important percentage of public bugs:
+            both Flow 0.30 and TypeScript 2.0 successfully detect 15%!</p>
         </div>
-        <div class="col-sm-4">
-            <img class="img-responsive center-block" alt="Responsive image" src="images/time_travel.jpg">
+        <div class="col-sm-4 row-sm-offset-h4">            
+            <img class="img-responsive img-rounded" alt="Responsive image" src="images/time_travel.jpg">
         </div>
     </div>
 </div>
@@ -254,17 +259,17 @@
 <div id="methodology" class="container-fluid text-center bg-grey">
     <h2>Methodology</h2>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <div class="col-sm-offset-2 col-sm-8">
             <figure class="figure">
-                <img class="img-responsive center-block" src="images/methodology_wide.gif">
-                <figcaption class="figure-caption">The fact that long-running JavaScript projects have extensive version
-                    histories, coupled with the existence of static type systems that support gradual typing and can be
-                    applied to JavaScript programs with few modifications, enables us to conduct a “time-travel”
-                    experiment.</figcaption>
+                <img class="center-block" width=100% src="images/methodology_wide.gif">
+                <figcaption class="figure-caption">The fact that long-running
+                JavaScript projects have extensive version histories, coupled
+                with the existence of static type systems that support gradual
+                typing and can be applied to JavaScript programs with few
+                modifications, enables us to conduct a “time-travel”
+                experiment.</figcaption>
             </figure>
         </div>
-        <div class="col-sm-2"></div>
     </div>
     <br><br>
     <h4>Corpus Collection</h4><br>
@@ -272,52 +277,79 @@
         <div class="col-sm-5">
             <figure class="figure">
                 <img class="img-responsive center-block" src="images/corpus_collection.png">
-                <figcaption class="figure-caption">For a project, we extract all bug ids from the issue tracker, then
-                    search for them in a project’s commit log messages; concurrently, we extract all SHA from the
-                    version history, and search for them in the project’s issues.</figcaption>
+                <figcaption class="figure-caption">For a project, we extract all
+                bug ids from the issue tracker, then search for them in a
+                project’s commit log messages; concurrently, we extract all SHA
+                from the version history, and search for them in the project’s
+                issues.</figcaption>
             </figure>
         </div>
         <div class="col-sm-7">
-            <p class="text-justify">We seek to construct a corpus of bugs that is representative and sufficiently large to support
-                statistical inference. As always, achieving representativeness is the main difficulty and uniform
-                sampling our main tool. We cannot sample bugs directly, but rather commits that we must classify into
-                fixes and nonfixes. Why fixes? Because a fix is often labeled as such, its parent is almost certainly
-                buggy and it identifies the region in the parent that a developer deemed relevant to the bug. To
-                identify bug-fixing commits, we consider only projects that use issue trackers, then, in parallel, we
-                look for bug report references in commit messages and commit ids (SHAs) in bug reports. This heuristic
-                is not only noisy; it must also contend with bias in project selection and bias introduced by missing
-                links.</p>
+            <p class="text-justify">We seek to construct a corpus of bugs that
+            is representative and sufficiently large to support
+                statistical inference. As always, achieving representativeness
+                is the main difficulty and uniform sampling our main tool. We
+                cannot sample bugs directly, but rather commits that we must
+                classify into fixes and nonfixes. Why fixes? Because a fix is
+                often labeled as such, its parent is almost certainly buggy and
+                it identifies the region in the parent that a developer deemed
+                relevant to the bug. To identify bug-fixing commits, we consider
+                only projects that use issue trackers, then, in parallel, we
+                look for bug report references in commit messages and commit ids
+                (SHAs) in bug reports. This heuristic is not only noisy; it must
+                also contend with bias in project selection and bias introduced
+                by missing links.</p>
             <p class="text-justify">Striving for generality, we used the
-                standard sample size computation to determine the number of bugs needed to achieve a specified
-                confidence interval. On 19/08/2015, there were 3,910,969 closed bug reports in JavaScript projects
-                on GitHub. We use this number to approximate the population. We set the confidence level and confidence
-                interval to be 95% and 5%, respectively. The result shows that a sample of 384 bugs is sufficient for
-                the experiment, which we rounded to 400 for convenience.</p>
-            <p class="text-justify">Please click <a href="data/bugs.json"><strong>here</strong></a> for the list of the 400 studied bugs.</p> 
+                standard sample size computation to determine the number of bugs
+                needed to achieve a specified confidence interval. On
+                19/08/2015, there were 3,910,969 closed bug reports in
+                JavaScript projects on GitHub. We use this number to approximate
+                the population. We set the confidence level and confidence
+                interval to be 95% and 5%, respectively. The result shows that a
+                sample of 384 bugs is sufficient for the experiment, which we
+                rounded to 400 for convenience.</p>
+            <p class="text-justify">Please click <a
+            href="data/bugs.json"><strong>here</strong></a> for the list of the
+            400 studied bugs.</p>
         </div>
     </div>
     <br><br>
     <h4>Annotation</h4><br>
     <div class="row">
         <div class="col-sm-9">
-            <p class="text-justify">Procedure 1 defines our manual type annotation procedure. Because we annotate each bug twice, once 
-            for each type system, our experiment is a within-subject repeated measure experiment. As such, a phenomenon known as
-            learning effects may come into play, as knowledge gained from creating the annotations for one type checker may
-            aid in creating the annotation for the other. To mitigate the learning effects, for a bug \(b\) in \(B\), we first pick a 
-            type checker \(tc\) from TypeScript and Flow uniformly at random, so that, on average, we consider as many bugs
-            for the first time for each type system (line 3). If b is not type related “beyond a shadow of a doubt”, such as 
-            misunderstanding the specification, we label it as undetectable under \(tc\) and categorise it, skipping the
-            annotation process. If not, we initialise the environment: for Flow, we add a header comment <code>/* @flow */</code>
-            to the file we want to annotate, whereas for TypeScript, we change the file extension from “.js" to
-            “.ts” (line 4). We read the bug report and the patch to identify the patched region, a set of scopes are
-            touched by the patch. Combining human program comprehension and JavaScript’s read–eval–print loop
-            (REPL), e.g. Node.js, as appropriate, we conjecture a type annotation that enables \(tc\) to detect \(b\). Following a set 
-            of predefined annotation tactics, we add the hypothesised annotations with the aim of driving \(tc\) to type check the 
-            region under assessment. We ignore type errors that we consider unrelated to this goal. Note that we are neither familiar 
-            with any project in our corpus, nor experts in type systems. To combat this, we have striven to be conservative: we annotate 
-            variables whose types are difficult to infer with <code>any</code>. Then we type check the resulting program. This process 
-            continues until we confirm that \(b\) is tc-detectable because \(tc\) throws an error within the patched region and the
-            added annotations are nontrivial and consistent, or we deem \(b\) is not tc-detectable, or we exceed the time budget \(M\).
+            <p class="text-justify">Procedure 1 defines our manual type
+            annotation procedure. Because we annotate each bug twice, once for
+            each type system, our experiment is a within-subject repeated
+            measure experiment. As such, a phenomenon known as learning effects
+            may come into play, as knowledge gained from creating the
+            annotations for one type checker may aid in creating the annotation
+            for the other. To mitigate the learning effects, for a bug \(b\) in
+            \(B\), we first pick a type checker \(tc\) from TypeScript and Flow
+            uniformly at random, so that, on average, we consider as many bugs
+            for the first time for each type system (line 3). If b is not type
+            related “beyond a shadow of a doubt”, such as misunderstanding the
+            specification, we label it as undetectable under \(tc\) and
+            categorise it, skipping the annotation process. If not, we
+            initialise the environment: for Flow, we add a header comment
+            <code>/* @flow */</code> to the file we want to annotate, whereas
+            for TypeScript, we change the file extension from “.js" to “.ts”
+            (line 4). We read the bug report and the patch to identify the
+            patched region, a set of scopes are touched by the patch. Combining
+            human program comprehension and JavaScript’s read–eval–print loop
+            (REPL), e.g. Node.js, as appropriate, we conjecture a type
+            annotation that enables \(tc\) to detect \(b\). Following a set of
+            predefined annotation tactics, we add the hypothesised annotations
+            with the aim of driving \(tc\) to type check the region under
+            assessment. We ignore type errors that we consider unrelated to this
+            goal. Note that we are neither familiar with any project in our
+            corpus, nor experts in type systems. To combat this, we have striven
+            to be conservative: we annotate variables whose types are difficult
+            to infer with <code>any</code>. Then we type check the resulting
+            program. This process continues until we confirm that \(b\) is
+            tc-detectable because \(tc\) throws an error within the patched
+            region and the added annotations are nontrivial and consistent, or
+            we deem \(b\) is not tc-detectable, or we exceed the time budget
+            \(M\).
             </p>
         </div>
         <div class="col-sm-3">
@@ -379,11 +411,12 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <h4>“That’s shocking. If you could make a change to the way we do development that would reduce the
-                    number of bugs being checked in by 10% or more overnight, that’s a no-brainer. Unless it doubles
-                    development time or something, we’d do it.”<br><br>
-                    <span style="font-style:normal;">An Engineering Manager, Microsoft</span>
-                </h4>
+                <h4>“That’s shocking. If you could make a change to the way we
+                do development that would reduce the number of bugs being
+                checked in by 10% or more overnight, that’s a no-brainer. Unless
+                it doubles development time or something, we’d do it.”<br><br>
+                <span style="font-style:normal;">An Engineering Manager,
+                Microsoft</span></h4>
             </div>
             <!--
             <div class="item">
@@ -407,13 +440,15 @@
     </div>
     
     <br>
-    <h4><em>"A scientifically true effect can be regularly reproduced by anyone who carries out the appropriate experiment in the way prescribed."</em></h4>
+    <h4><em>"A scientifically true effect can be regularly reproduced by anyone
+    who carries out the appropriate experiment in the way prescribed."</em></h4>
     <br>
 
     <div class="row slideanim">
         <div class="col-sm-6">
             <span class="glyphicon glyphicon-lock logo-small"></span>
-            <h4><a href='https://bitbucket.org/ucabgao/time-travel_experiment_on_types'>Assessment</a></h4>
+            <h4><a
+            href='https://bitbucket.org/ucabgao/time-travel_experiment_on_types'>Assessment</a></h4>
             <p>The complete assessment on the 400 bugs.</p>
         </div>
         <div class="col-sm-6">
@@ -427,7 +462,12 @@
 <!-- Container (Case Study Section) -->
 <div id="casestudy" class="container-fluid text-center bg-grey">
     <h2>Case Study</h2>
-    <h4>Some bugs are worth closer inspection. Based on three criteria we select bugs for further manual assessment: ones whose TypeScript- or Flow-detectability differs among the three "raters", ones whose TypeScript- and Flow-detectability differ, and ones that are TypeScript-detectable under version 2.0 but not under 1.8. Please click <a href="documents/case_study.pdf">here</a> for a detailed discussion.</h4>
+    <h4>Some bugs are worth closer inspection. Based on three criteria we select
+    bugs for further manual assessment: ones whose TypeScript- or
+    Flow-detectability differs among the three "raters", ones whose TypeScript-
+    and Flow-detectability differ, and ones that are TypeScript-detectable under
+    version 2.0 but not under 1.8. Please click 
+    <a href="documents/case_study.pdf">here</a> for a detailed discussion.</h4>
     <br>
 
     <div class="row slideanim">
@@ -437,7 +477,14 @@
                     <h1>Disagreement</h1>
                 </div>
                 <div class="panel-body">
-                    <p>Of the 80 uniformly-sampled bugs that we used to calculate inter-rater agreement, each rater needed to make 160 decisions in total, 80 for TypeScript-preventability and 80 for Flow-preventability. 138 of these 160 decisions were unanimously labelled. We define a strong disagreement as a disagreement in which one rater deems the bug preventable while another deems it unpreventable. Of the 22 disagreements, 12 are strong.</p>                
+                    <p>Of the 80 uniformly-sampled bugs that we used to
+                    calculate inter-rater agreement, each rater needed to make
+                    160 decisions in total, 80 for TypeScript-preventability and
+                    80 for Flow-preventability. 138 of these 160 decisions were
+                    unanimously labelled. We define a strong disagreement as a
+                    disagreement in which one rater deems the bug preventable
+                    while another deems it unpreventable. Of the 22
+                    disagreements, 12 are strong.</p>                
                 </div>
                 <div class="panel-footer">
                     <!-- <button class="btn btn-lg"><a href='data/disagreement.json'>Studied bugs</a></button> -->
@@ -451,7 +498,14 @@
                     <h1>Flow vs. TypeScript</h1>
                 </div>
                 <div class="panel-body">
-                    <p>Though sharing a similar annotation syntax, Flow and TypeScript differ in some dimensions. We compared Flow and TypeScript in terms of their ability to potentially prevent public bugs had they been used when those bugs were introduced. Flow and TypeScript both catch a nontrivial portion of public bugs. In our dataset, the bugs they can prevent largely overlap, with 8 exceptions: 5 bugs are only Flow-preventable and 3 only TypeScript-preventable.</p>
+                    <p>Though sharing a similar annotation syntax, Flow and
+                    TypeScript differ in some dimensions. We compared Flow and
+                    TypeScript in terms of their ability to potentially prevent
+                    public bugs had they been used when those bugs were
+                    introduced. Flow and TypeScript both catch a nontrivial
+                    portion of public bugs. In our dataset, the bugs they can
+                    prevent largely overlap, with 8 exceptions: 5 bugs are only
+                    Flow-preventable and 3 only TypeScript-preventable.</p>
                 </div>
                 <div class="panel-footer">
                     <!-- <button class="btn btn-lg"><a href='data/flow_vs_tsc.json'>Studied bugs</a></button> -->
@@ -465,7 +519,14 @@
                     <h1>TypeScript 1.8 vs. 2.0</h1>
                 </div>
                 <div class="panel-body">
-                    <p>TypeScript 2.0 was released during this study, giving us the opportunity to measure the effectiveness of its handling of <code>null</code> and <code>undefined</code>. Prior to 2.0, all types were nullable in TypeScript. TypeScript 2.0 added the compiler option <code>--strictNullChecks</code>, which makes most types nonnullable. We reviewed our corpus and found that 22 bugs, an increase of 38%, are preventable under TypeScript 2.0 but not under TypeScript 1.8.</p>
+                    <p>TypeScript 2.0 was released during this study, giving us
+                    the opportunity to measure the effectiveness of its handling
+                    of <code>null</code> and <code>undefined</code>. Prior to
+                    2.0, all types were nullable in TypeScript. TypeScript 2.0
+                    added the compiler option <code>--strictNullChecks</code>,
+                    which makes most types nonnullable. We reviewed our corpus
+                    and found that 22 bugs, an increase of 38%, are preventable
+                    under TypeScript 2.0 but not under TypeScript 1.8.</p>
                 </div>
                 <div class="panel-footer">
                     <!-- <button class="btn btn-lg"><a href='data/tsc_vs_tsc.json'>Studied bugs</a></button> -->
@@ -482,9 +543,12 @@
     <div class="row">
         <div class="col-sm-5">
             <p>Contact us and we'll get back as soon as possible.</p>
-            <p><span class="glyphicon glyphicon-map-marker"></span>Univerisity College London, Gower Street, London, UK</p>
-            <!-- <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p> -->
-            <p><span class="glyphicon glyphicon-envelope"></span>z.gao.12 (at) ucl.ac.uk </p>
+            <p><span class="glyphicon glyphicon-map-marker"></span>Univerisity
+            College London, Gower Street, London, UK</p>
+            <!-- <p><span class="glyphicon glyphicon-phone"></span> +00
+            1515151515</p> -->
+            <p><span class="glyphicon glyphicon-envelope"></span>z.gao.12 (at)
+            ucl.ac.uk </p>
         </div>
         <div class="col-sm-7">
             <div class="row">
@@ -495,7 +559,8 @@
                     <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
                 </div>
             </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+            <textarea class="form-control" id="comments" name="comments"
+            placeholder="Comment" rows="5"></textarea><br>
             <div class="row">
                 <div class="col-sm-12 form-group">
                     <button class="btn btn-default pull-right" type="submit">Send</button>
@@ -505,18 +570,20 @@
     </div>
 </div>
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center bg-grey">
     <a href="#home" title="To Top">
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
-    <p>Copyright © Zheng Gao 2016. Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">W3Schools</a></p>
+    <p>Copyright © Zheng Gao 2016. Bootstrap Theme Made By <a
+    href="http://www.w3schools.com" title="Visit w3schools">W3Schools</a></p>
 </footer>
 
 <script>
     $(document).ready(function(){
         // Add smooth scrolling to all links in navbar + footer link
         $(".navbar a, footer a[href='#home']").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
+            // Make sure this.hash has a value before overriding default
+            // behavior
             if (this.hash !== "") {
                 // Prevent default anchor click behavior
                 event.preventDefault();
@@ -524,13 +591,15 @@
                 // Store hash
                 var hash = this.hash;
 
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                // Using jQuery's animate() method to add smooth page scroll The
+                // optional number (900) specifies the number of milliseconds it
+                // takes to scroll to the specified area
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
                 }, 900, function(){
 
-                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    // Add hash (#) to URL when done scrolling (default click
+                    // behavior)
                     window.location.hash = hash;
                 });
             } // End if
