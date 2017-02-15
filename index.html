@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
     <meta charset="utf-8">
@@ -17,10 +18,8 @@
     <!-- Custom styles for this template -->
     <!-- <link href="./css/non-responsive.css" rel="stylesheet"> -->
 
-    <script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script
-    src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
         body {
@@ -28,6 +27,7 @@
             line-height: 1.8;
             color: #818181;
         }
+        
         h2 {
             font-size: 24px;
             text-transform: uppercase;
@@ -35,6 +35,7 @@
             font-weight: 600;
             margin-bottom: 30px;
         }
+        
         h4 {
             font-size: 19px;
             line-height: 1.375em;
@@ -42,46 +43,58 @@
             font-weight: 400;
             margin-bottom: 30px;
         }
+        
         .jumbotron {
             background-color: #81d8d0;
             color: #fff;
             padding: 100px 25px;
             font-family: Montserrat, sans-serif;
         }
+        
         .container-fluid {
             padding: 60px 50px;
         }
+        
         .bg-grey {
             background-color: #f6f6f6;
         }
+        
         .logo-small {
             color: #81d8d0;
             font-size: 50px;
         }
+        
         .logo {
             color: #81d8d0;
             font-size: 200px;
         }
+        
         .thumbnail {
             padding: 0 0 15px 0;
             border: none;
             border-radius: 0;
         }
+        
         .thumbnail img {
             width: 100%;
             height: 100%;
             margin-bottom: 10px;
         }
-        .carousel-control.right, .carousel-control.left {
+        
+        .carousel-control.right,
+        .carousel-control.left {
             background-image: none;
             color: #81d8d0;
         }
+        
         .carousel-indicators li {
             border-color: #81d8d0;
         }
+        
         .carousel-indicators li.active {
             background-color: #81d8d0;
         }
+        
         .item h4 {
             max-width: 70%;
             font-size: 19px;
@@ -92,22 +105,27 @@
             margin-left: 15%;
             margin-right: 15%;
         }
+        
         .item span {
             font-style: normal;
         }
+        
         .panel {
             border: 1px solid #81d8d0;
-            border-radius:0 !important;
+            border-radius: 0 !important;
             transition: box-shadow 0.5s;
         }
+        
         .panel:hover {
-            box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
         }
+        
         .panel-footer .btn:hover {
             border: 1px solid #81d8d0;
             background-color: #fff !important;
             color: #81d8d0;
         }
+        
         .panel-heading {
             color: #fff !important;
             background-color: #81d8d0 !important;
@@ -118,21 +136,26 @@
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
         }
+        
         .panel-footer {
             background-color: white !important;
         }
+        
         .panel-footer h3 {
             font-size: 32px;
         }
+        
         .panel-footer h4 {
             color: #aaa;
             font-size: 14px;
         }
+        
         .panel-footer .btn {
             margin: 15px 0;
             background-color: #81d8d0;
             color: #fff;
         }
+        
         .navbar {
             margin-bottom: 0;
             background-color: #81d8d0;
@@ -144,23 +167,33 @@
             border-radius: 0;
             font-family: Montserrat, sans-serif;
         }
-        .navbar li a, .navbar .navbar-brand {
+        
+        .navbar li a,
+        .navbar .navbar-brand {
             color: #fff !important;
         }
-        .navbar-nav li a:hover, .navbar-nav li.active a {
+        
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
             color: #81d8d0 !important;
             background-color: #fff !important;
         }
+        
         .navbar-default .navbar-toggle {
             border-color: transparent;
             color: #fff !important;
         }
+        
         footer .glyphicon {
             font-size: 20px;
             margin-bottom: 20px;
             color: #81d8d0;
         }
-        .slideanim {visibility:hidden;}
+        
+        .slideanim {
+            visibility: hidden;
+        }
+        
         .slide {
             animation-name: slide;
             -webkit-animation-name: slide;
@@ -168,6 +201,7 @@
             -webkit-animation-duration: 1s;
             visibility: visible;
         }
+        
         @keyframes slide {
             0% {
                 opacity: 0;
@@ -178,6 +212,7 @@
                 transform: translateY(0%);
             }
         }
+        
         @-webkit-keyframes slide {
             0% {
                 opacity: 0;
@@ -188,6 +223,7 @@
                 -webkit-transform: translateY(0%);
             }
         }
+        
         @media screen and (max-width: 768px) {
             .col-sm-4 {
                 text-align: center;
@@ -198,255 +234,263 @@
                 margin-bottom: 35px;
             }
         }
+        
         @media screen and (max-width: 480px) {
             .logo {
                 font-size: 150px;
             }
         }
-        .row-sm-offset-h4{
+        
+        .row-sm-offset-h4 {
             margin-top: 80px;
         }
     </style>
 </head>
+
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">OVERVIEW</a></li>
-                <!-- <li><a href="#definition">DEFINITION</a></li> -->
-                <li><a href="#methodology">METHODOLOGY</a></li>
-                <li><a href="#results">RESULTS</a></li>
-                <li><a href="#casestudy">CASE STUDY</a></li>
-                <!-- <li><a href="#data">DATA</a></li> -->
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">OVERVIEW</a></li>
+                    <!-- <li><a href="#definition">DEFINITION</a></li> -->
+                    <li><a href="#methodology">METHODOLOGY</a></li>
+                    <li><a href="#results">RESULTS</a></li>
+                    <li><a href="#casestudy">CASE STUDY</a></li>
+                    <!-- <li><a href="#data">DATA</a></li> -->
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="jumbotron text-center">
-    <h1>To Type or Not to Type: Quantifying Detectable Bugs in JavaScript</h1><br>
-    <!-- <p>One smart sentence</p> -->
-</div>
+    <div class="jumbotron text-center">
+        <h1>To Type or Not to Type: Quantifying Detectable Bugs in JavaScript</h1><br>
+    </div>
 
-<!-- Container (Overview Section) -->
-<div id="about" class="container-fluid">
-    <div class="row">
-        <div class="col-sm-8">
-            <h2>Overview</h2>
-            <p class="text-justify">JavaScript is growing explosively and is now
-            used in large mature projects even outside the web domain.
-            JavaScript is also a dynamically typed language for which static
-            type systems, notably Facebook’s Flow and Microsoft’s TypeScript,
-            have been written. What benefits do these static type systems
-            provide?</p>
-            <p class="text-justify">Leveraging JavaScript project histories, we
-            select a fixed bug and check out the code just prior to the fix. We
-            manually add type annotations to the buggy code and test whether
-            Flow and TypeScript report an error on the buggy code, thereby
-            possibly prompting a developer to fix the bug before its public
-            release. We then report the proportion of bugs on which these type
-            systems reported an error. Evaluating static type systems against
-            public bugs, which have survived testing and review, is
-            conservative: it understates their effectiveness at detecting bugs
-            during private development, not to mention their other benefits such
-            as facilitating code search/completion and serving as documentation.
-            Despite this uneven playing field, our central finding is that both
-            static type systems find an important percentage of public bugs:
-            both Flow 0.30 and TypeScript 2.0 successfully detect 15%!</p>
-        </div>
-        <div class="col-sm-4 row-sm-offset-h4">            
-            <img class="img-responsive img-rounded" alt="Responsive image" src="./images/venn_tc_detectable.png">
+    <!-- Container (Overview Section) -->
+    <div id="about" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Overview</h2>
+                <p class="text-justify">JavaScript is growing explosively and is
+                now used in large mature projects even outside the web domain.
+                JavaScript is also a dynamically typed language for which static
+                type systems, notably Facebook’s Flow and Microsoft’s
+                TypeScript, have been written. What benefits do these static
+                type systems provide? </p>
+                <p class="text-justify">Leveraging JavaScript project histories,
+                we select a fixed bug and check out the code just prior to the
+                fix. We manually add type annotations to the buggy code and test
+                whether Flow and TypeScript report an error on the buggy code,
+                thereby possibly prompting a developer to fix the bug before its
+                public release. We then report the proportion of bugs on which
+                these type systems reported an error. Evaluating static type
+                systems against public bugs, which have survived testing and
+                review, is conservative: it understates their effectiveness at
+                detecting bugs during private development, not to mention their
+                other benefits such as facilitating code search/completion and
+                serving as documentation. Despite this uneven playing field, our
+                central finding is that both static type systems find an
+                important percentage of public bugs: both Flow 0.30 and
+                TypeScript 2.0 successfully detect 15%!</p>
+            </div>
+            <div class="col-sm-4 row-sm-offset-h4">
+                <img class="img-responsive img-rounded" alt="Responsive image" src="./images/venn_tc_detectable.png">
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Container (Definition Section) -->
-<!--
-<div id="definition" class="container-fluid">
-    <div class="row">
-        <div class="col-sm-8">
-            <h2>Overview</h2>
-            <p class="text-justify">JavaScript is growing explosively and is now
-            used in large mature projects even outside the web domain.
-            JavaScript is also a dynamically typed language for which static
-            type systems, notably Facebook’s Flow and Microsoft’s TypeScript,
-            have been written. What benefits do these static type systems
-            provide?</p>
-            <p class="text-justify">Leveraging JavaScript project histories, we
-            select a fixed bug and check out the code just prior to the fix. We
-            manually add type annotations to the buggy code and test whether
-            Flow and TypeScript report an error on the buggy code, thereby
-            possibly prompting a developer to fix the bug before its public
-            release. We then report the proportion of bugs on which these type
-            systems reported an error. Evaluating static type systems against
-            public bugs, which have survived testing and review, is
-            conservative: it understates their effectiveness at detecting bugs
-            during private development, not to mention their other benefits such
-            as facilitating code search/completion and serving as documentation.
-            Despite this uneven playing field, our central finding is that both
-            static type systems find an important percentage of public bugs:
-            both Flow 0.30 and TypeScript 2.0 successfully detect 15%!</p>
+    <!-- Container (Definition Section) -->
+    <!--
+    <div id="definition" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Overview</h2>
+                <p class="text-justify">JavaScript is growing explosively and is now
+                used in large mature projects even outside the web domain.
+                JavaScript is also a dynamically typed language for which static
+                type systems, notably Facebook’s Flow and Microsoft’s TypeScript,
+                have been written. What benefits do these static type systems
+                provide?</p>
+                <p class="text-justify">Leveraging JavaScript project histories, we
+                select a fixed bug and check out the code just prior to the fix. We
+                manually add type annotations to the buggy code and test whether
+                Flow and TypeScript report an error on the buggy code, thereby
+                possibly prompting a developer to fix the bug before its public
+                release. We then report the proportion of bugs on which these type
+                systems reported an error. Evaluating static type systems against
+                public bugs, which have survived testing and review, is
+                conservative: it understates their effectiveness at detecting bugs
+                during private development, not to mention their other benefits such
+                as facilitating code search/completion and serving as documentation.
+                Despite this uneven playing field, our central finding is that both
+                static type systems find an important percentage of public bugs:
+                both Flow 0.30 and TypeScript 2.0 successfully detect 15%!</p>
+            </div>
         </div>
     </div>
-</div>
--->
+    -->
 
-<!-- Container (Methodology Section) -->
-<div id="methodology" class="container-fluid text-center bg-grey">
-    <h2>Methodology</h2>
-    <div class="row">
-        <div class="col-sm-offset-2 col-sm-8">
-            <figure class="figure">
-                <img class="center-block" width=100% src="./images/methodology_wide.gif">
-                <figcaption class="figure-caption">The fact that long-running
-                JavaScript projects have extensive version histories, coupled
-                with the existence of static type systems that support gradual
-                typing and can be applied to JavaScript programs with few
-                modifications, enables us to conduct a “time-travel”
-                experiment.</figcaption>
-            </figure>
+    <!-- Container (Methodology Section) -->
+    <div id="methodology" class="container-fluid text-center bg-grey">
+        <h2>Methodology</h2>
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8">
+                <figure class="figure">
+                    <img class="center-block" width=100% src="./images/methodology_wide.gif">
+                    <figcaption class="figure-caption">The fact that
+                    long-running JavaScript projects have extensive version
+                    histories, coupled with the existence of static type systems
+                    that support gradual typing and can be applied to JavaScript
+                    programs with few modifications, enables us to conduct a
+                    “time-travel” experiment.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <br><br>
+        <h4>Corpus Collection</h4><br>
+        <div class="row">
+            <div class="col-sm-5">
+                <figure class="figure">
+                    <img class="img-responsive center-block" src="./images/corpus_collection.png">
+                    <figcaption class="figure-caption">For a project, we extract
+                    all bug ids from the issue tracker, then search for them in
+                    a project’s commit log messages; concurrently, we extract
+                    all SHA from the version history, and search for them in the
+                    project’s issues.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-7">
+                <p class="text-justify">We seek to construct a corpus of bugs
+                that is representative and sufficiently large to support
+                statistical inference. As always, achieving representativeness
+                is the main difficulty, which we address by uniform sampling. We
+                cannot sample bugs directly, but rather commits that we must
+                classify into fixes and non-fixes. Why fixes? Because a fix is
+                often labelled as such, its parent is almost certainly buggy and
+                it identifies the region in the parent that a developer deemed
+                relevant to the bug. To identify bug-fixing commits, we consider
+                only projects that use issue trackers, then we look for bug
+                report references in commit messages and commit ids (SHAs) in
+                bug reports. This heuristic is not only noisy; it must also
+                contend with bias in project selection and bias introduced by
+                missing links.</p>
+                <p class="text-justify">We used the standard sample size
+                computation to determine the sample size. On 19/08/2015, there
+                were 3,910,969 closed issues for JavaScript projects on GitHub,
+                which we used to approximate the population. We set the
+                confidence level and confidence interval to 95% and 5%,
+                respectively. The calculation showed that a sample of 384 bugs
+                was sufficient for the experiment, which we rounded to 400.</p>
+                <p class="text-justify">Please click <a
+                href="data/bugs.json"><strong>here</strong></a> for the list of
+                the 400 studied bugs.</p>
+            </div>
+        </div>
+        <br><br>
+        <h4>Annotation</h4><br>
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="text-justify">Procedure 1 defines our manual type
+                annotation procedure. Because we annotate each bug twice, once
+                for each type system, our experiment is a within-subject
+                repeated measure experiment. As such, a phenomenon known as
+                learning effects may come into play, as knowledge gained from
+                creating the annotations for one type checker may speed
+                annotating the other. To mitigate learning effects, for a bug
+                \(b\) in \(B\), we first pick a type system \(ts\) from Flow and
+                TypeScript uniformly at random, so that, on average, we consider
+                as many bugs for the first time for each type system. If \(b\)
+                is not type related “beyond a shadow of a doubt”, such as
+                misunderstanding the specification, we label it as undetectable
+                under \(ts\) and categorise it, skipping the annotation process.
+                If not, we read the bug report and the fix to identify the
+                patched region, the set of lexical scopes the fix changes.
+                Combining human comprehension and JavaScript’s read–eval–print
+                loop (REPL), e.g. Node.js, we attempt to understand the intended
+                behavior of a program and add consistent and minimal annotations
+                that cause ts to error on \(b\). We are not experts in type
+                systems nor any project in our corpus. To combat this, we have
+                striven to be conservative: we annotate variables whose types
+                are difficult to infer with <code>any</code>. Then we type check
+                the resulting program. We ignore type errors that we consider
+                unrelated to this goal. We repeat this process until we confirm
+                that \(b\) is \(ts\)-detectable because \(ts\) throws an error
+                within the patched region and the added annotations are
+                consistent, or we deem \(b\) is not \(ts\)-detectable, or we
+                exceed the time budget \(M\).</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-responsive center-block" src="./images/annotation.png">
+            </div>
         </div>
     </div>
-    <br><br>
-    <h4>Corpus Collection</h4><br>
-    <div class="row">
-        <div class="col-sm-5">
-            <figure class="figure">
-                <img class="img-responsive center-block" src="./images/corpus_collection.png">
-                <figcaption class="figure-caption">For a project, we extract all
-                bug ids from the issue tracker, then search for them in a
-                project’s commit log messages; concurrently, we extract all SHA
-                from the version history, and search for them in the project’s
-                issues.</figcaption>
-            </figure>
-        </div>
-        <div class="col-sm-7">
-            <p class="text-justify">We seek to construct a corpus of bugs that
-            is representative and sufficiently large to support statistical
-            inference. As always, achieving representativeness is the main
-            difficulty, which we address by uniform sampling. We cannot sample
-            bugs directly, but rather commits that we must classify into fixes
-            and non-fixes. Why fixes? Because a fix is often labelled as such,
-            its parent is almost certainly buggy and it identifies the region in
-            the parent that a developer deemed relevant to the bug. To identify
-            bug-fixing commits, we consider only projects that use issue
-            trackers, then we look for bug report references in commit messages
-            and commit ids (SHAs) in bug reports. This heuristic is not only
-            noisy; it must also contend with bias in project selection and bias
-            introduced by missing links.</p>
-            <p class="text-justify">We used the standard sample size computation
-            to determine the sample size. On 19/08/2015, there were 3,910,969
-            closed issues for JavaScript projects on GitHub, which we used to
-            approximate the population. We set the confidence level and
-            confidence interval to 95% and 5%, respectively. The calculation
-            showed that a sample of 384 bugs was sufficient for the experiment,
-            which we rounded to 400.</p>
-            <p class="text-justify">Please click <a
-            href="data/bugs.json"><strong>here</strong></a> for the list of the
-            400 studied bugs.</p>
-        </div>
-    </div>
-    <br><br>
-    <h4>Annotation</h4><br>
-    <div class="row">
-        <div class="col-sm-8">
-            <p class="text-justify">Procedure 1 defines our manual type
-            annotation procedure. Because we annotate each bug twice, once for
-            each type system, our experiment is a within-subject repeated
-            measure experiment. As such, a phenomenon known as learning effects
-            may come into play, as knowledge gained from creating the
-            annotations for one type checker may speed annotating the other. To
-            mitigate learning effects, for a bug \(b\) in \(B\), we first pick a
-            type system \(ts\) from Flow and TypeScript uniformly at random, so
-            that, on average, we consider as many bugs for the first time for
-            each type system. If \(b\) is not type related “beyond a shadow of a
-            doubt”, such as misunderstanding the specification, we label it as
-            undetectable under \(ts\) and categorise it, skipping the annotation
-            process. If not, we read the bug report and the fix to identify the
-            patched region, the set of lexical scopes the fix changes. Combining
-            human comprehension and JavaScript’s read–eval–print loop (REPL),
-            e.g. Node.js, we attempt to understand the intended behavior of a
-            program and add consistent and minimal annotations that cause ts to
-            error on \(b\). We are not experts in type systems nor any project
-            in our corpus. To combat this, we have striven to be conservative:
-            we annotate variables whose types are difficult to infer with
-            <code>any</code>. Then we type check the resulting program. We
-            ignore type errors that we consider unrelated to this goal. We
-            repeat this process until we confirm that \(b\) is \(ts\)-detectable
-            because \(ts\) throws an error within the patched region and the
-            added annotations are consistent, or we deem \(b\) is not
-            \(ts\)-detectable, or we exceed the time budget \(M\).</p>
-        </div>
-        <div class="col-sm-4">
-            <img class="img-responsive center-block" src="./images/annotation.png">
-        </div>
-    </div>
-</div>
 
-<!-- Container (Results Section) -->
-<div id="results" class="container-fluid text-center">
-    <h2>Results</h2>
-    <h3>What we have discovered</h3><br><br>
-    <div class="row text-center slideanim">
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img class="img-responsive center-block" src="./images/histo_tc_detectable.png">
+    <!-- Container (Results Section) -->
+    <div id="results" class="container-fluid text-center">
+        <h2>Results</h2>
+        <h3>What we have discovered</h3><br><br>
+        <div class="row text-center slideanim">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img class="img-responsive center-block" src="./images/histo_tc_detectable.png">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img class="img-responsive center-block" src="./images/histo_undetectability.png">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img class="img-responsive center-block" src="./images/annotation_tax.png">
+                </div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img class="img-responsive center-block" src="./images/histo_undetectability.png">
+        <div class="row text-center slideanim">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <p><strong>Histogram of TC-Detectable Bugs</strong></p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <p><strong>Histogram of Undetectability</strong></p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <p><strong>Annotation Effort</strong></p>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img class="img-responsive center-block" src="./images/annotation_tax.png">
-            </div>
-        </div>
-    </div>
-    <div class="row text-center slideanim">
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <p><strong>Histogram of TC-Detectable Bugs</strong></p>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <p><strong>Histogram of Undetectability</strong></p>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <p><strong>Annotation Effort</strong></p>
-            </div>
-        </div>
-    </div>
-    <br>
-    <h3>What developers say</h3>
-    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <!--
+        <br>
+        <h3>What developers say</h3>
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <!--
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
             -->
-        </ol>
+            </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <h4>“That’s shocking. If you could make a change to the way we
-                do development that would reduce the number of bugs being
-                checked in by 10% or more overnight, that’s a no-brainer. Unless
-                it doubles development time or something, we’d do it.”<br><br>
-                <span style="font-style:normal;">An Engineering Manager,
-                Microsoft</span></h4>
-            </div>
-            <!--
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <h4>“That’s shocking. If you could make a change to the way
+                    we do development that would reduce the number of bugs being
+                    checked in by 10% or more overnight, that’s a no-brainer.
+                    Unless it doubles development time or something, we’d do
+                    it.”<br><br> <span style="font-style:normal;">An Engineering
+                    Manager, Microsoft</span></h4>
+                </div>
+                <!--
             <div class="item">
                 <h4>"Bla bla bla"<br><span style="font-style:normal;">John Doe</span></h4>
             </div>
@@ -454,197 +498,200 @@
                 <h4>"Bla bla bla"<br><span style="font-style:normal;">John Doe Jr.</span></h4>
             </div>
             -->
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    
-    <br>
-    <h4><em>"A scientifically true effect can be regularly reproduced by anyone
+        <br>
+        <h4><em>"A scientifically true effect can be regularly reproduced by anyone
     who carries out the appropriate experiment in the way prescribed."</em></h4>
-    <br>
+        <br>
 
-    <div class="row slideanim">
-        <div class="col-sm-6">
-            <span class="glyphicon glyphicon-lock logo-small"></span>
-            <h4><a
-            href='https://bitbucket.org/ucabgao/time-travel_experiment_on_types'>Assessment</a></h4>
-            <p>The complete assessment on the 400 bugs.</p>
-        </div>
-        <div class="col-sm-6">
-            <span class="glyphicon glyphicon-wrench logo-small"></span>
-            <h4><a href='data/AnnotationFacilitator.7z'>Annotation Facilitator</a></h4>
-            <p>The tool used to facilitate the annotation procedure.</p>
-        </div>
-    </div>
-</div>
-
-<!-- Container (Case Study Section) -->
-<div id="casestudy" class="container-fluid text-center bg-grey">
-    <h2>Case Study</h2>
-    <h4>Some bugs are worth closer inspection. Based on three criteria we select
-    bugs for further manual assessment: ones whose TypeScript- or
-    Flow-detectability differs among the three "raters", ones whose TypeScript-
-    and Flow-detectability differ, and ones that are TypeScript-detectable under
-    version 2.0 but not under 1.8. Please click 
-    <a href="documents/case_study.pdf">here</a> for a detailed discussion.</h4>
-    <br>
-
-    <div class="row slideanim">
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <h1>Disagreement</h1>
-                </div>
-                <div class="panel-body">
-                    <p>Of the 80 uniformly-sampled bugs that we used to
-                    calculate inter-rater agreement, each rater needed to make
-                    160 decisions in total, 80 for TypeScript-preventability and
-                    80 for Flow-preventability. 138 of these 160 decisions were
-                    unanimously labelled. We define a strong disagreement as a
-                    disagreement in which one rater deems the bug preventable
-                    while another deems it unpreventable. Of the 22
-                    disagreements, 12 are strong.</p>                
-                </div>
-                <div class="panel-footer">
-                    <!-- <button class="btn btn-lg"><a href='data/disagreement.json'>Studied bugs</a></button> -->
-                    <a href='data/disagreement.json'>Studied bugs</a>
-                </div>
+        <div class="row slideanim">
+            <div class="col-sm-6">
+                <span class="glyphicon glyphicon-lock logo-small"></span>
+                <h4><a href='https://bitbucket.org/ucabgao/time-travel_experiment_on_types'>Assessment</a></h4>
+                <p>The complete assessment on the 400 bugs.</p>
             </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <h1>Flow vs. TypeScript</h1>
-                </div>
-                <div class="panel-body">
-                    <p>Though sharing a similar annotation syntax, Flow and
-                    TypeScript differ in some dimensions. We compared Flow and
-                    TypeScript in terms of their ability to potentially prevent
-                    public bugs had they been used when those bugs were
-                    introduced. Flow and TypeScript both catch a nontrivial
-                    portion of public bugs. In our dataset, the bugs they can
-                    prevent largely overlap, with 6 exceptions: 3 bugs are only
-                    Flow-preventable and 3 only TypeScript-preventable.</p>
-                </div>
-                <div class="panel-footer">
-                    <!-- <button class="btn btn-lg"><a href='data/flow_vs_tsc.json'>Studied bugs</a></button> -->
-                    <a href='data/flow_vs_tsc.json'>Studied bugs</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <h1>TypeScript 1.8 vs. 2.0</h1>
-                </div>
-                <div class="panel-body">
-                    <p>TypeScript 2.0 was released during this study, giving us
-                    the opportunity to measure the effectiveness of its handling
-                    of <code>null</code> and <code>undefined</code>. Prior to
-                    2.0, all types were nullable in TypeScript. TypeScript 2.0
-                    added the compiler option <code>--strictNullChecks</code>,
-                    which makes most types nonnullable. We reviewed our corpus
-                    and found that 22 bugs, an increase of 58%, are preventable
-                    under TypeScript 2.0 but not under TypeScript 1.8.</p>
-                </div>
-                <div class="panel-footer">
-                    <!-- <button class="btn btn-lg"><a href='data/tsc_vs_tsc.json'>Studied bugs</a></button> -->
-                    <a href='data/tsc_vs_tsc.json'>Studied bugs</a>
-                </div>
+            <div class="col-sm-6">
+                <span class="glyphicon glyphicon-wrench logo-small"></span>
+                <h4><a href='data/AnnotationFacilitator.7z'>Annotation Facilitator</a></h4>
+                <p>The tool used to facilitate the annotation procedure.</p>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid">
-    <h2 class="text-center">CONTACT</h2><br>
-    <div class="row">
-        <div class="col-sm-5">
-            <p>Contact us and we'll get back as soon as possible.</p>
-            <p><span class="glyphicon glyphicon-map-marker"></span>Univerisity
-            College London, Gower Street, London, UK</p>
-            <!-- <p><span class="glyphicon glyphicon-phone"></span> +00
+    <!-- Container (Case Study Section) -->
+    <div id="casestudy" class="container-fluid text-center bg-grey">
+        <h2>Case Study</h2>
+        <h4>Some bugs are worth closer inspection. Based on three criteria we
+        select bugs for further manual assessment: ones whose TypeScript- or
+        Flow-detectability differs among the three "raters", ones whose
+        TypeScript- and Flow-detectability differ, and ones that are
+        TypeScript-detectable under version 2.0 but not under 1.8. Please click
+        <a href="documents/case_study.pdf">here</a> for a detailed
+        discussion.</h4>
+        <br>
+
+        <div class="row slideanim">
+            <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Disagreement</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>Of the 80 uniformly-sampled bugs that we used to
+                        calculate inter-rater agreement, each rater needed to
+                        make 160 decisions in total, 80 for
+                        TypeScript-preventability and 80 for
+                        Flow-preventability. 138 of these 160 decisions were
+                        unanimously labelled. We define a strong disagreement as
+                        a disagreement in which one rater deems the bug
+                        preventable while another deems it unpreventable. Of the
+                        22 disagreements, 12 are strong.</p>
+                    </div>
+                    <div class="panel-footer">
+                        <!-- <button class="btn btn-lg"><a href='data/disagreement.json'>Studied bugs</a></button> -->
+                        <a href='data/disagreement.json'>Studied bugs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Flow vs. TypeScript</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>Though sharing a similar annotation syntax, Flow and
+                        TypeScript differ in some dimensions. We compared Flow
+                        and TypeScript in terms of their ability to potentially
+                        prevent public bugs had they been used when those bugs
+                        were introduced. Flow and TypeScript both catch a
+                        nontrivial portion of public bugs. In our dataset, the
+                        bugs they can prevent largely overlap, with 6
+                        exceptions: 3 bugs are only Flow-preventable and 3 only
+                        TypeScript-preventable.</p>
+                    </div>
+                    <div class="panel-footer">
+                        <!-- <button class="btn btn-lg"><a href='data/flow_vs_tsc.json'>Studied bugs</a></button> -->
+                        <a href='data/flow_vs_tsc.json'>Studied bugs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>TypeScript 1.8 vs. 2.0</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>TypeScript 2.0 was released during this study, giving
+                        us the opportunity to measure the effectiveness of its
+                        handling of <code>null</code> and
+                        <code>undefined</code>. Prior to 2.0, all types were
+                        nullable in TypeScript. TypeScript 2.0 added the
+                        compiler option <code>--strictNullChecks</code>, which
+                        makes most types nonnullable. We reviewed our corpus and
+                        found that 22 bugs, an increase of 58%, are preventable
+                        under TypeScript 2.0 but not under TypeScript 1.8.</p>
+                    </div>
+                    <div class="panel-footer">
+                        <!-- <button class="btn btn-lg"><a href='data/tsc_vs_tsc.json'>Studied bugs</a></button> -->
+                        <a href='data/tsc_vs_tsc.json'>Studied bugs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div id="contact" class="container-fluid">
+        <h2 class="text-center">CONTACT</h2><br>
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Contact us and we'll get back as soon as possible.</p>
+                <p><span class="glyphicon
+                glyphicon-map-marker"></span>Univerisity College London, Gower
+                Street, London, UK</p> <!-- <p><span class="glyphicon
+                glyphicon-phone"></span> +00
             1515151515</p> -->
-            <p><span class="glyphicon glyphicon-envelope"></span>z.gao.12 (at)
-            ucl.ac.uk </p>
-        </div>
-        <div class="col-sm-7">
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                </div>
-                <div class="col-sm-6 form-group">
-                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                </div>
+                <p><span class="glyphicon glyphicon-envelope"></span>z.gao.12 (at) ucl.ac.uk </p>
             </div>
-            <textarea class="form-control" id="comments" name="comments"
-            placeholder="Comment" rows="5"></textarea><br>
-            <div class="row">
-                <div class="col-sm-12 form-group">
-                    <button class="btn btn-default pull-right" type="submit">Send</button>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Send</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<footer class="container-fluid text-center bg-grey">
-    <a href="#home" title="To Top">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-    <p>Copyright © Zheng Gao 2016. Bootstrap Theme Made By <a
-    href="http://www.w3schools.com" title="Visit w3schools">W3Schools</a></p>
-</footer>
+    <footer class="container-fluid text-center bg-grey">
+        <a href="#home" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p>Copyright © Zheng Gao 2016. Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">W3Schools</a></p>
+    </footer>
 
-<script>
-    $(document).ready(function(){
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#home']").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default
-            // behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#home']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default
+                // behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
 
-                // Store hash
-                var hash = this.hash;
+                    // Store hash
+                    var hash = this.hash;
 
-                // Using jQuery's animate() method to add smooth page scroll The
-                // optional number (900) specifies the number of milliseconds it
-                // takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function(){
+                    // Using jQuery's animate() method to add smooth page scroll The
+                    // optional number (900) specifies the number of milliseconds it
+                    // takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
 
-                    // Add hash (#) to URL when done scrolling (default click
-                    // behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-
-        $(window).scroll(function() {
-            $(".slideanim").each(function(){
-                var pos = $(this).offset().top;
-
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
+                        // Add hash (#) to URL when done scrolling (default click
+                        // behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
             });
-        });
-    })
-</script>
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+
+    </script>
 
 </body>
+
 </html>
