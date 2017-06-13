@@ -3,4 +3,5 @@
 *.m4v
 documents/*
 !documents/case_study.pdf
-
+!documents/type_study.pdf
+!documents/ICSE_talk.key
